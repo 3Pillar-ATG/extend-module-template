@@ -1,0 +1,41 @@
+//==========================================================================
+//   Spacer
+//==========================================================================
+
+@mixin spacer($start, $end, $name) {
+
+  @for $i from $start through $end {
+
+    .#{$name}-top-#{$i}x {
+      padding-top: ms($i);
+    }
+
+    .#{$name}-bottom-#{$i}x {
+      padding-bottom: ms($i);
+    }
+
+    .#{$name}-left-#{$i}x {
+      padding-left: ms($i);
+    }
+
+    .#{$name}-right-#{$i}x {
+      padding-right: ms($i);
+    }
+
+    .#{$name}-#{$i}x {
+      padding: ms($i);
+    }
+
+    .#{$name}-vertical-#{$i}x {
+      padding-bottom: ms($i);
+      padding-top: ms($i);
+    }
+
+    .#{$name}-horizontal-#{$i}x {
+      padding-left: ms($i);
+      padding-right: ms($i);
+    }
+
+  }
+
+}

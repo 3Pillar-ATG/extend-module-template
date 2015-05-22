@@ -1,0 +1,29 @@
+//==========================================================================
+//   Grid System Test state
+//==========================================================================
+
+@function ms($i) {
+
+  @return modular-scale(20px, $i, $golden);
+
+}
+
+@include grid(16);
+
+.grid {
+  //Test State
+  &.visual {
+
+    > .column {
+      background: #3071a9;
+      color: #fff;
+      height: 100vh;
+      text-align: center;
+    }
+
+  }
+}
+
+body {
+  margin: 0;
+}
