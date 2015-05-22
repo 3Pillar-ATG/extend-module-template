@@ -1,0 +1,41 @@
+//==========================================================================
+//   Input
+//==========================================================================
+
+%fragment-input {
+
+  // Reset unusual Firefox-on-Android default style;
+  background-image: none;
+
+  border: 0;
+
+  //Correct color properties not being inherited
+  color: inherit;
+
+  //Force buttons to inherit font styles
+  font: inherit;
+
+  //Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
+  line-height: normal;
+
+  //Address margins set differently in Firefox 4+, Safari, and Chrome
+  margin: 0;
+
+  //Line up different sized buttons
+  vertical-align: middle;
+
+  &[disabled] {
+    // Set cursor for disabled elements.
+    cursor: not-allowed;
+    // iOS fix for unreadable disabled content
+    opacity: 1;
+    // Future-proof disabling of clicks
+    pointer-events: none;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+}

@@ -1,0 +1,73 @@
+//==========================================================================
+//   Test states
+//==========================================================================
+
+@function ms($i) {
+
+  @return modular-scale($vr-base-size, $i, $vr-ms-ratio);
+
+}
+
+@mixin input-size($ms, $txt) {
+
+  padding: ms($ms - 1) ms($ms);
+  @include font-size($txt);
+
+}
+
+@mixin input-style(
+$bg,
+$color,
+$shadow-color,
+$focus-color,
+$placeholder-color,
+$border-radius) {
+
+  background-color: $bg;
+  color: $color;
+  box-shadow: inset 0 0 0 .1rem $shadow-color;
+  border-radius: $border-radius;
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 .1rem $focus-color;
+    outline: .1rem solid $focus-color;
+    transition: outline-width .3s;
+  }
+}
+
+input {
+
+  @extend %fragment-input;
+
+  &.primary {
+    @include input-style(
+    #fff,
+    #222,
+    #bdc3c7,
+    #3071a9,
+    #ccc,
+    2px);
+  }
+
+  &.small {
+    @include input-size(-1, 12px);
+  }
+
+  &.medium {
+    @include input-size(-1, 14px);
+  }
+
+  &.large {
+    @include input-size(0, 18px);
+  }
+}
+
+// Page Test Styles
+
+div {
+  margin: 10px 0;
+}
