@@ -1,2 +1,4 @@
-# extend-modules
-Extend Modules
+component-template
+===========
+
+Get a copy and build away
